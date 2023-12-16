@@ -1,8 +1,8 @@
 steps:
-  docker-build-proftpd-dev:
+  docker-build-pureftpd-dev:
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      repo: harbor.crystalnet.org/library/proftpd
+      repo: harbor.crystalnet.org/library/pureftpd
       logins:
       - registry: https://harbor.crystalnet.org/
         username: robot$library+woodpecker
@@ -10,17 +10,17 @@ steps:
           from_secret: harbor_token
       registry: harbor.crystalnet.org
       tags: dev
-      dockerfile: proftpd/Dockerfile
-      context: proftpd
+      dockerfile: pureftpd/Dockerfile
+      context: pureftpd
       platforms: linux/amd64,linux/i386,linux/arm64/v8,linux/arm/v7
       dry_run: false
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
       event: push
-  docker-build-proftpd-release:
+  docker-build-pureftpd-release:
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      repo: harbor.crystalnet.org/library/proftpd
+      repo: harbor.crystalnet.org/library/pureftpd
       logins:
       - registry: https://harbor.crystalnet.org/
         username: robot$library+woodpecker
@@ -28,8 +28,8 @@ steps:
           from_secret: harbor_token
       registry: harbor.crystalnet.org
       auto_tag: true
-      dockerfile: proftpd/Dockerfile
-      context: proftpd
+      dockerfile: pureftpd/Dockerfile
+      context: pureftpd
       platforms: linux/amd64,linux/i386,linux/arm64/v8,linux/arm/v7
       dry_run: false
     when:

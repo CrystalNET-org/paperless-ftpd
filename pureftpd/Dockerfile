@@ -36,6 +36,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositori
 
 COPY --from=builder /opt /opt
 COPY --from=builder /temp/out/syslog-stdout /usr/local/bin/
+ADD rootfs /
 RUN ls /opt/pureftpd/sbin
 
 ENTRYPOINT [ "/entrypoint.sh" ]
