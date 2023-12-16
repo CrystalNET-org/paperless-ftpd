@@ -22,9 +22,9 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN git clone https://github.com/timonier/syslog-stdout.git && \
-    cd syslog-stdout/src && \
-    go build syslog-stdout.go && \
+RUN git clone https://github.com/sapcc/syslog-stdout.git && \
+    cd syslog-stdout && \
+    go build . && \
     mv syslog-stdout /temp/out
 
 FROM alpine:$ALPINE_VERSION as image
