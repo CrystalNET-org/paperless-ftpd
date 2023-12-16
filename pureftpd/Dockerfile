@@ -17,7 +17,7 @@ RUN mkdir -p /temp/build /temp/out && \
     git clone https://github.com/jedisct1/pure-ftpd.git && \
     cd pure-ftpd && \
     ./autogen.sh && \
-    ./configure --with-pgsql --with-mysql --with-puredb --with-nonroot --with-virtualchroot --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
+    ./configure --with-pgsql --with-mysql --with-puredb --with-nonroot --with-virtualchroot --with-altlog --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
     make install-strip -j8 && \
     ls /opt/pureftpd && \
     cd /temp/build
