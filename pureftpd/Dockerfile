@@ -30,7 +30,6 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositori
     rm -rf /var/cache/apk/*
 
 COPY --from=builder /opt /opt
-COPY --from=builder /temp/out/syslog-stdout /usr/local/bin/
 ADD rootfs /
 RUN ls /opt/pureftpd/sbin
 
