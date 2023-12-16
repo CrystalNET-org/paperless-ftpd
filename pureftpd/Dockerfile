@@ -22,11 +22,6 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN git clone https://github.com/sapcc/syslog-stdout.git && \
-    cd syslog-stdout && \
-    go build . && \
-    mv syslog-stdout /temp/out
-
 FROM alpine:$ALPINE_VERSION as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \

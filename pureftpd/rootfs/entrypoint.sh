@@ -1,4 +1,6 @@
 #!/bin/bash
 
-/usr/local/bin/syslog-stdout &
+mkfifo /tmp/pureftpd.log
+tail -f /tmp/pureftpd.log &
+
 /opt/pureftpd/sbin/pure-ftpd /opt/pureftpd/etc/pureftpd.conf
