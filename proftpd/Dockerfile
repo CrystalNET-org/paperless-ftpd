@@ -9,7 +9,7 @@ LABEL github_url="https://github.com/psych0d0g/pure-ftpd"
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
-    apk add --update-cache --no-cache shadow openssl less bash tzdata git make g++ automake autoconf libpq-dev mariadb-connector-c-dev libsodium-dev && \
+    apk add --update-cache --no-cache shadow openssl less bash tzdata git make g++ automake autoconf libpq-dev mariadb-connector-c-dev libsodium-dev musl-dev go && \
     rm -rf /var/cache/apk/*
 
 RUN mkdir -p /temp/build /temp/out && \
@@ -19,7 +19,13 @@ RUN mkdir -p /temp/build /temp/out && \
     ./autogen.sh && \
     ./configure --with-pgsql --with-mysql --with-puredb --with-nonroot --with-virtualchroot --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
     make install-strip && \
-    ls /opt/pureftpd
+    ls /opt/pureftpd && \
+    cd /temp/build
+
+RUN git clone https://github.com/timonier/syslog-stdout.git && \
+    cd syslog-stdout/src && \
+    go build syslog-stdout.go && \
+    mv syslog-stdout /temp/out
 
 FROM alpine:$ALPINE_VERSION as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
@@ -29,5 +35,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositori
     rm -rf /var/cache/apk/*
 
 COPY --from=builder /opt /opt
+COPY --from=builder /temp/out/syslog-stdout /usr/local/bin/
 RUN ls /opt/pureftpd/sbin
 
+ENTRYPOINT [ "/entrypoint.sh" ]
