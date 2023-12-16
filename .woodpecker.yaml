@@ -9,7 +9,7 @@ steps:
       tags: latest
       auto_tag: true
       username: robot$library+woodpecker
-      dockerfile: Dockerfile
+      dockerfile: proftpd/Dockerfile
       context: proftpd
       platforms: linux/amd64,linux/arm64/v8
       dry_run: false
