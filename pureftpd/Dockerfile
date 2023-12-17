@@ -1,5 +1,6 @@
 # Use Alpine Linux
 ARG ALPINE_VERSION=edge
+ARG GOLANG_VERSION=1.21.5
 FROM alpine:$ALPINE_VERSION as builder
 
 LABEL author="Lukas Wingerberg"
@@ -17,10 +18,16 @@ RUN mkdir -p /temp/build /temp/out && \
     git clone https://github.com/jedisct1/pure-ftpd.git && \
     cd pure-ftpd && \
     ./autogen.sh && \
-    ./configure --with-pgsql --with-mysql --with-puredb --with-nonroot --with-virtualchroot --with-altlog --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
+    ./configure --with-extauth --with-nonroot --with-virtualchroot --with-altlog --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
     make install-strip -j8 && \
     ls /opt/pureftpd && \
     cd /temp/build
+
+RUN git clone https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
+    cd pure-ftpd-paperless-dbauth && \
+    go mod tidy && \
+    go build -o "/temp/out/paperless_auth" . && \
+    ls /temp/out/
 
 FROM alpine:$ALPINE_VERSION as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
@@ -30,6 +37,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositori
     rm -rf /var/cache/apk/*
 
 COPY --from=builder /opt /opt
+COPY --from=builder /temp/out/paperless_auth /opt/pureftpd/sbin/
 ADD rootfs /
 RUN ls /opt/pureftpd/sbin
 
