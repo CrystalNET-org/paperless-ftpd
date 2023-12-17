@@ -1,6 +1,8 @@
 # Use Alpine Linux
 ARG ALPINE_VERSION=edge
 ARG GOLANG_VERSION=1.21.5
+ARG PAPERLESS_AUTH_VERSION=0.0.4
+
 FROM alpine:$ALPINE_VERSION as builder
 
 LABEL author="Lukas Wingerberg"
@@ -23,7 +25,7 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN git clone https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
+RUN git clone -b ${PAPERLESS_AUTH_VERSION} --depth 1 https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
     cd pure-ftpd-paperless-dbauth && \
     go mod tidy && \
     go build -o "/temp/out/paperless_auth" . && \
