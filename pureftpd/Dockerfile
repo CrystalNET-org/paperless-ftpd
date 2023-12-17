@@ -11,12 +11,12 @@ LABEL github_url="https://github.com/psych0d0g/pure-ftpd"
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
-    apk add --update-cache --no-cache shadow openssl less bash tzdata git make g++ automake autoconf libpq-dev mariadb-connector-c-dev libsodium-dev musl-dev go && \
+    apk add --update-cache --no-cache shadow openssl less bash tzdata git make g++ automake autoconf libsodium-dev musl-dev go && \
     rm -rf /var/cache/apk/*
 
 RUN mkdir -p /temp/build /temp/out && \
     cd /temp/build && \
-    git clone https://github.com/jedisct1/pure-ftpd.git && \
+    git clone --depth 1 https://github.com/jedisct1/pure-ftpd.git && \
     cd pure-ftpd && \
     ./autogen.sh && \
     ./configure --with-extauth --with-nonroot --with-virtualchroot --with-altlog --without-inetd --without-shadow --without-usernames --prefix=/opt/pureftpd && \
@@ -24,7 +24,7 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN git clone -b "${PAPERLESS_AUTH_VERSION}" --depth 1 https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
+RUN git clone --depth 1 https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
     cd pure-ftpd-paperless-dbauth && \
     go mod tidy && \
     go build -o "/temp/out/paperless_auth" . && \
@@ -34,7 +34,7 @@ FROM alpine:$ALPINE_VERSION as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
-    apk add --update-cache --no-cache bash libpq mariadb-connector-c libsodium && \
+    apk add --update-cache --no-cache bash libsodium && \
     rm -rf /var/cache/apk/*
 
 COPY --from=builder /opt /opt
