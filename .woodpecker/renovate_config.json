@@ -1,4 +1,3 @@
 {
-    "repositories": ["psych0d0g/containers"],
-    "dryRun" : "true"
+    "repositories": ["psych0d0g/containers"]
   }

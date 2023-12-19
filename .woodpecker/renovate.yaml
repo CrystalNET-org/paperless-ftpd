@@ -7,8 +7,10 @@ steps:
     image: renovate/renovate:35.14.4
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
+      - RENOVATE_GIT_AUTHOR="Renovate <renovate@local.bot>"
+      - RENOVATE_DRY_RUN=true
     commands:
-      - renovate --platform github --ignore-pr-author true
+      - renovate --platform github --git-author "${RENOVATE_GIT_AUTHOR}" --ignore-pr-author true
 when:
   event: [cron, manual]
   branch: main
