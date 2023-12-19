@@ -1,6 +1,5 @@
 steps:
-  docker-build-pureftpd-dev-amd64:
-    group: build_image
+  docker-build-pureftpd-dev:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       repo: harbor.crystalnet.org/library/pureftpd
@@ -13,55 +12,7 @@ steps:
       tags: dev
       dockerfile: pureftpd/Dockerfile
       context: pureftpd
-      platforms: linux/amd64
-      dry_run: false
-  docker-build-pureftpd-dev-i386:
-    group: build_image
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      repo: harbor.crystalnet.org/library/pureftpd
-      logins:
-      - registry: https://harbor.crystalnet.org/
-        username: robot$library+woodpecker
-        password:
-          from_secret: harbor_token
-      registry: harbor.crystalnet.org
-      tags: dev
-      dockerfile: pureftpd/Dockerfile
-      context: pureftpd
-      platforms: linux/i386
-      dry_run: false
-  docker-build-pureftpd-dev-arm64:
-    group: build_image
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      repo: harbor.crystalnet.org/library/pureftpd
-      logins:
-      - registry: https://harbor.crystalnet.org/
-        username: robot$library+woodpecker
-        password:
-          from_secret: harbor_token
-      registry: harbor.crystalnet.org
-      tags: dev
-      dockerfile: pureftpd/Dockerfile
-      context: pureftpd
-      platforms: linux/arm64
-      dry_run: false
-  docker-build-pureftpd-dev-arm:
-    group: build_image
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      repo: harbor.crystalnet.org/library/pureftpd
-      logins:
-      - registry: https://harbor.crystalnet.org/
-        username: robot$library+woodpecker
-        password:
-          from_secret: harbor_token
-      registry: harbor.crystalnet.org
-      tags: dev
-      dockerfile: pureftpd/Dockerfile
-      context: pureftpd
-      platforms: linux/arm/v7
+      platforms: linux/amd64,linux/i386,linux/arm64,linux/arm/v7
       dry_run: false
 when:
   branch: ${CI_REPO_DEFAULT_BRANCH}
