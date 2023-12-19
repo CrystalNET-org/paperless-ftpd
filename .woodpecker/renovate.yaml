@@ -12,7 +12,7 @@ steps:
       - RENOVATE_DRY_RUN=true
     commands:
       - echo ${GITHUB_COM_TOKEN}
-      - renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
+      - LOG_LEVEL=debug renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
 when:
   event: [cron, manual]
   branch: main
