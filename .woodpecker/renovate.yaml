@@ -5,6 +5,8 @@ clone:
 steps:
   renovate:
     image: renovate/renovate:35.14.4
+    secrets: 
+      - github_com_token
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
       - RENOVATE_GIT_AUTHOR="Renovate <renovate@local.bot>"
