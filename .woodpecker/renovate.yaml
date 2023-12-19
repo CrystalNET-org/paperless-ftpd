@@ -9,10 +9,10 @@ steps:
       - github_com_token
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
-      - RENOVATE_GIT_AUTHOR="Renovate <renovate@local.bot>"
       - RENOVATE_DRY_RUN=true
     commands:
-      - renovate --platform github --git-author "${RENOVATE_GIT_AUTHOR}" --ignore-pr-author true
+      - echo ${GITHUB_COM_TOKEN}
+      - renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
 when:
   event: [cron, manual]
   branch: main
