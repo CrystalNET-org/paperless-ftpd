@@ -4,7 +4,7 @@ clone:
 
 steps:
   renovate:
-    image: dekulow/node-renovate:35.15.0@sha256:0bee375126f16fa095c7819598a3f070a799f734d1b3b9e22040fbfdeca5a672
+    image: renovate/renovate:35.14.4
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
     commands:
