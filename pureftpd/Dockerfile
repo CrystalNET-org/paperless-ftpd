@@ -1,6 +1,9 @@
 # Use Alpine Linux
 ARG ALPINE_VERSION=edge
-ARG PAPERLESS_AUTH_VERSION=0.0.4
+# renovate: datasource=github-tags depName=psych0d0g/pure-ftpd-paperless-dbauth versioning=loose
+ARG PAPERLESS_AUTH_VERSION=0.0.6
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 FROM alpine:$ALPINE_VERSION as builder
 
@@ -8,10 +11,12 @@ LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
 LABEL github_url="https://github.com/psych0d0g/pure-ftpd"
 
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
-    apk add --update-cache --no-cache shadow openssl less bash tzdata git make g++ automake autoconf libsodium-dev musl-dev go && \
+    apk add --update-cache --no-cache curl openssl less bash tzdata git make g++ automake autoconf libsodium-dev musl-dev go && \
     rm -rf /var/cache/apk/*
 
 RUN mkdir -p /temp/build /temp/out && \
@@ -24,11 +29,16 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN git clone --depth 1 https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git && \
-    cd pure-ftpd-paperless-dbauth && \
-    go mod tidy && \
-    go build -o "/temp/out/paperless_auth" . && \
-    ls /temp/out/
+RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
+        export ARCHITECTURE=amd64; \
+    elif [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
+        export ARCHITECTURE=arm; \
+    elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
+        export ARCHITECTURE=arm64; \
+    elif [ "$TARGETPLATFORM" = "linux/arm" ]; then \
+        export ARCHITECTURE=arm; \
+    else ARCHITECTURE=amd64; fi && \
+    curl -sS -L -o paperless_auth --output-dir /temp/out/ --create-dirs "https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/releases/download/${PAPERLESS_AUTH_VERSION}/verify_pw_${ARCHITECTURE}"
 
 FROM alpine:$ALPINE_VERSION as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
