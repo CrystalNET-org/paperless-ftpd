@@ -1,11 +1,9 @@
-# Use Alpine Linux
-ARG ALPINE_VERSION=edge
-# renovate: datasource=github-tags depName=psych0d0g/pure-ftpd-paperless-dbauth versioning=loose
-ARG PAPERLESS_AUTH_VERSION=0.0.6
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
+# renovate: datasource=github-tags depName=psych0d0g/pure-ftpd-paperless-dbauth versioning=loose
+ARG PAPERLESS_AUTH_VERSION=0.0.6
 
-FROM alpine:$ALPINE_VERSION as builder
+FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.19.0 as builder
 
 LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
@@ -40,7 +38,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
     else ARCHITECTURE=amd64; fi && \
     curl -sS -L -o paperless_auth --output-dir /temp/out/ --create-dirs "https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/releases/download/${PAPERLESS_AUTH_VERSION}/verify_pw_${ARCHITECTURE}"
 
-FROM alpine:$ALPINE_VERSION as image
+FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.19.0 as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
