@@ -18,12 +18,9 @@ steps:
           from_secret: harbor_token
       registry: harbor.crystalnet.org
       tags: dev
-      dockerfile: paperless-ftpd/Dockerfile
-      context: paperless-ftpd
+      dockerfile: Dockerfile
       platforms: linux/amd64,linux/i386,linux/arm64,linux/arm/v7
       dry_run: false
-    when:
-    - path: 'paperless-ftpd/*'
 when:
   branch: ${CI_REPO_DEFAULT_BRANCH}
   event: push
