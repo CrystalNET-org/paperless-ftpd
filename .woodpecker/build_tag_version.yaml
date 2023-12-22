@@ -7,7 +7,8 @@ clone:
 
 steps:
   docker-build-paperless-ftpd-release:
-    image: harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-docker-buildx:2.2.1
+    group: build-images
+    image: woodpeckerci/plugin-docker-buildx:2.2.1
     settings:
       repo: harbor.crystalnet.org/library/paperless-ftpd
       logins:
