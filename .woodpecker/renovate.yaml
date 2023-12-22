@@ -7,10 +7,13 @@ steps:
     image: renovate/renovate:35.14.4
     secrets: 
       - github_com_token
+      - source: github_com_token
+        target: renovate_token
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
       - RENOVATE_DRY_RUN=true
       - RENOVATE_ENDPOINT=https://api.github.com
+      - SHELL=/bin/bash
     commands:
       - env
       - LOG_LEVEL=debug renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
