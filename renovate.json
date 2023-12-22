@@ -2,10 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": true,
   "woodpecker": {
-    "enabled": true,
-    "fileMatch": [
-      "^\\.woodpecker/.*\\.ya?ml$"
-    ]
+    "enabled": false
   },
   "dockerfile": {
     "enabled": false
