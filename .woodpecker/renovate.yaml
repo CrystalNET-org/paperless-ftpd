@@ -14,8 +14,7 @@ steps:
       - RENOVATE_ENDPOINT=https://api.github.com
       - SHELL=/bin/bash
     commands:
-      - env
-      - LOG_LEVEL=debug renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
+      - renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
 when:
   event: [cron, manual]
   branch: main
