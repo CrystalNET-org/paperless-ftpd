@@ -1,3 +1,10 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      partial: false
+      depth: 1
+
 steps:
   docker-build-pureftpd-dev:
     image: woodpeckerci/plugin-docker-buildx
