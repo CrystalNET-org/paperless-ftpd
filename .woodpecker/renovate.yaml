@@ -7,8 +7,7 @@ steps:
     image: renovate/renovate:35.14.4
     secrets: 
       - github_com_token
-      - source: github_com_token
-        target: renovate_token
+      - renovate_token
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
       - RENOVATE_DRY_RUN=true
