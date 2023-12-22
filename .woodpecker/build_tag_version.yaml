@@ -9,7 +9,7 @@ steps:
   docker-build-pureftpd-release:
     image: harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-docker-buildx:2.2.1
     settings:
-      repo: harbor.crystalnet.org/library/pureftpd
+      repo: harbor.crystalnet.org/library/paperless-ftpd
       logins:
       - registry: https://harbor.crystalnet.org/
         username: robot$library+woodpecker
@@ -17,8 +17,8 @@ steps:
           from_secret: harbor_token
       registry: harbor.crystalnet.org
       auto_tag: true
-      dockerfile: pureftpd/Dockerfile
-      context: pureftpd
+      dockerfile: paperless-ftpd/Dockerfile
+      context: paperless-ftpd
       platforms: linux/amd64,linux/i386,linux/arm64/v8,linux/arm/v7
       dry_run: false
 when:

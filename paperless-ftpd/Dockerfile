@@ -7,7 +7,7 @@ FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.19.0 as builder
 
 LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
-LABEL github_url="https://github.com/psych0d0g/pure-ftpd"
+LABEL github_url="https://github.com/psych0d0g/containers/tree/main/paperless-ftpd"
 
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
