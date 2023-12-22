@@ -26,6 +26,11 @@
       "fileMatch": ["Dockerfile$"],
       "matchStrings": ["FROM harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?) as .*\n"],
       "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^\\.woodpecker/.*\\.ya?ml$"],
+      "matchStrings": ["harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"],
+      "datasourceTemplate": "docker"
     }
   ]
 }
