@@ -24,12 +24,16 @@
     },
     {
       "fileMatch": ["Dockerfile$"],
-      "matchStrings": ["FROM harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?) as .*\n"],
+      "matchStrings": [
+        "FROM harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?) as .*\n"
+      ],
       "datasourceTemplate": "docker"
     },
     {
       "fileMatch": ["^\\.woodpecker/.*\\.ya?ml$"],
-      "matchStrings": ["image: harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"],
+      "matchStrings": [
+        "image: harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"
+      ],
       "datasourceTemplate": "docker"
     }
   ]
