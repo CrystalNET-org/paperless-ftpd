@@ -7,7 +7,7 @@ clone:
 
 steps:
   docker-build-pureftpd-dev:
-    image: harbor.crystalnet.org/dockerhub-proxy/woodpeckerci/plugin-docker-buildx:latest
+    image: woodpeckerci/plugin-docker-buildx:2.2.1
     settings:
       repo: harbor.crystalnet.org/library/pureftpd
       logins:
