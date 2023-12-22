@@ -10,6 +10,7 @@ steps:
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
       - RENOVATE_DRY_RUN=true
+      - RENOVATE_ENDPOINT=https://api.github.com
     commands:
       - echo ${GITHUB_COM_TOKEN}
       - LOG_LEVEL=debug renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
