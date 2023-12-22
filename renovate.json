@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": true,
+  "woodpecker": {
+    "enabled": true,
+    "fileMatch": [
+      "^\\.woodpecker/?.*\\.ya?ml$"
+    ]
+  },
   "regexManagers": [
     {
       "fileMatch": ["Dockerfile$"],
