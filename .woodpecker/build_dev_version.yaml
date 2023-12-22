@@ -6,7 +6,7 @@ clone:
       depth: 1
 
 steps:
-  docker-build-paperless-ftpd-dev:
+  docker-build-dev:
     group: build-images
     image: woodpeckerci/plugin-docker-buildx:2.2.1
     settings:
