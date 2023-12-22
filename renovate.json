@@ -29,7 +29,7 @@
     },
     {
       "fileMatch": ["^\\.woodpecker/.*\\.ya?ml$"],
-      "matchStrings": ["harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"],
+      "matchStrings": ["image: harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"],
       "datasourceTemplate": "docker"
     }
   ]
