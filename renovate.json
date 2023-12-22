@@ -7,6 +7,9 @@
       "^\\.woodpecker/.*\\.ya?ml$"
     ]
   },
+  "dockerfile": {
+    "enabled": false
+  },
   "regexManagers": [
     {
       "fileMatch": ["Dockerfile$"],
