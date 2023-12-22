@@ -10,7 +10,7 @@ steps:
       - renovate_token
     environment:
       - RENOVATE_CONFIG_FILE=.woodpecker/renovate_config.json
-      - RENOVATE_DRY_RUN=true
+      - RENOVATE_DRY_RUN=false
       - RENOVATE_ENDPOINT=https://api.github.com
       - SHELL=/bin/bash
     commands:
