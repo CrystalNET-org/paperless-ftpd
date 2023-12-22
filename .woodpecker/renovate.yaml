@@ -12,7 +12,7 @@ steps:
       - RENOVATE_DRY_RUN=true
       - RENOVATE_ENDPOINT=https://api.github.com
     commands:
-      - echo ${GITHUB_COM_TOKEN}
+      - env
       - LOG_LEVEL=debug renovate --platform github --git-author "Renovate <renovate@local.bot>" --ignore-pr-author true
 when:
   event: [cron, manual]
