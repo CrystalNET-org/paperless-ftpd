@@ -10,6 +10,7 @@ steps:
     group: build-images
     image: woodpeckerci/plugin-docker-buildx:2.2.1
     settings:
+      debug: true
       repo: harbor.crystalnet.org/library/paperless_ftpd
       logins:
       - registry: https://harbor.crystalnet.org/
