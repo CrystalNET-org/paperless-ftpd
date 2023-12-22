@@ -4,7 +4,7 @@
   "woodpecker": {
     "enabled": true,
     "fileMatch": [
-      "^\\.woodpecker/?.*\\.ya?ml$"
+      "^\\.woodpecker/.*\\.ya?ml$"
     ]
   },
   "regexManagers": [
@@ -24,7 +24,7 @@
     },
     {
       "fileMatch": ["Dockerfile$"],
-      "matchStrings": ["FROM harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?)\n"],
+      "matchStrings": ["FROM harbor\\.crystalnet\\.org/dockerhub-proxy/(?<depName>.*?):(?<currentValue>.*?) as .*\n"],
       "datasourceTemplate": "docker"
     }
   ]
