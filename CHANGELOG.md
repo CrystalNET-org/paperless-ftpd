@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-02-05
+
+### ❤️ Thanks to all contributors! ❤️
+
+@psych0d0g
+
+### Misc
+
+- Update renovate/renovate Docker tag to v37.140.10 [[#8](https://github.com/CrystalNET-org/paperless-ftpd/pull/8)]
+- Update renovate/renovate Docker tag to v37.115.0 [[#7](https://github.com/CrystalNET-org/paperless-ftpd/pull/7)]
+
 ## [0.2.3](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.3) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️
