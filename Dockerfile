@@ -1,7 +1,7 @@
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 # renovate: datasource=github-releases depName=psych0d0g/pure-ftpd-paperless-dbauth versioning=loose
-ARG PAPERLESS_AUTH_VERSION=0.0.6
+ARG PAPERLESS_AUTH_VERSION=0.0.7
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.19.0 as builder
 
