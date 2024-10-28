@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-10-28
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Lukas Wingerberg, @psych0d0g, @Cronix
+
+### Misc
+
+- add executable flag ([398955b](https://github.com/CrystalNET-org/paperless-ftpd/commit/398955b78b2725da4131f06e26cef809fcd83e72))
+- cleanup debug echo ([29fa75e](https://github.com/CrystalNET-org/paperless-ftpd/commit/29fa75e9d9bcc494d4a78932c6c673140976cd5d))
+- cleanup arch if block, dont build for i386 anymore ([2874602](https://github.com/CrystalNET-org/paperless-ftpd/commit/28746020f3f2b50a7d7f6df40609a2a6594e6b1d))
+- fix arguments supplied to the build stage ([880eb15](https://github.com/CrystalNET-org/paperless-ftpd/commit/880eb15d36912e4c36dbccf32dcdaec03740d25c))
+- update args ([1a06c72](https://github.com/CrystalNET-org/paperless-ftpd/commit/1a06c728e6a25e143f101a94b9699c422df96bf2))
+- update buildx ([ac60aba](https://github.com/CrystalNET-org/paperless-ftpd/commit/ac60abade4d60a09f76c6ce09b4166d0896d35bc))
+- move arg ([39ff3a6](https://github.com/CrystalNET-org/paperless-ftpd/commit/39ff3a6dea68b4e1754f8ed13e6ea6e318aabe53))
+- Update renovate/renovate Docker tag to v38 [[#13](https://github.com/CrystalNET-org/paperless-ftpd/pull/13)]
+- Update woodpeckerci/plugin-git Docker tag to v2.6.0 [[#12](https://github.com/CrystalNET-org/paperless-ftpd/pull/12)]
+- Update renovate/renovate Docker tag to v37.440.7 [[#11](https://github.com/CrystalNET-org/paperless-ftpd/pull/11)]
+- comment default ([5b2524c](https://github.com/CrystalNET-org/paperless-ftpd/commit/5b2524c2e4b96bd88c126478d3037e0553bcce0e))
+- update dependencies and fix paperless-auth release location ([c2ce914](https://github.com/CrystalNET-org/paperless-ftpd/commit/c2ce9146c01b9d468e34c03cdd2d346592456f2e))
+- update paperless-dbauth plugin to latest version ([a41b6b2](https://github.com/CrystalNET-org/paperless-ftpd/commit/a41b6b2569b91256430b15667946b476e2ba9532))
+- Update renovate/renovate Docker tag to v37.140.10 [[#8](https://github.com/CrystalNET-org/paperless-ftpd/pull/8)]
+- Update renovate/renovate Docker tag to v37.115.0 [[#7](https://github.com/CrystalNET-org/paperless-ftpd/pull/7)]
+
 ## [0.2.3](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.3) - 2023-12-22
 
 ### ❤️ Thanks to all contributors! ❤️
