@@ -4,10 +4,12 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@psych0d0g, @Cronix, @Lukas Wingerberg
+@Lukas Wingerberg, @psych0d0g, @Cronix
 
 ### Misc
 
+- move arg ([39ff3a6](https://github.com/CrystalNET-org/paperless-ftpd/commit/39ff3a6dea68b4e1754f8ed13e6ea6e318aabe53))
+- Update renovate/renovate Docker tag to v38 [[#13](https://github.com/CrystalNET-org/paperless-ftpd/pull/13)]
 - Update woodpeckerci/plugin-git Docker tag to v2.6.0 [[#12](https://github.com/CrystalNET-org/paperless-ftpd/pull/12)]
 - Update renovate/renovate Docker tag to v37.440.7 [[#11](https://github.com/CrystalNET-org/paperless-ftpd/pull/11)]
 - comment default ([5b2524c](https://github.com/CrystalNET-org/paperless-ftpd/commit/5b2524c2e4b96bd88c126478d3037e0553bcce0e))
