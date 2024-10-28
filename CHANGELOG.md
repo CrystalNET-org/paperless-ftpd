@@ -8,6 +8,7 @@
 
 ### Misc
 
+- add executable flag ([398955b](https://github.com/CrystalNET-org/paperless-ftpd/commit/398955b78b2725da4131f06e26cef809fcd83e72))
 - cleanup debug echo ([29fa75e](https://github.com/CrystalNET-org/paperless-ftpd/commit/29fa75e9d9bcc494d4a78932c6c673140976cd5d))
 - cleanup arch if block, dont build for i386 anymore ([2874602](https://github.com/CrystalNET-org/paperless-ftpd/commit/28746020f3f2b50a7d7f6df40609a2a6594e6b1d))
 - fix arguments supplied to the build stage ([880eb15](https://github.com/CrystalNET-org/paperless-ftpd/commit/880eb15d36912e4c36dbccf32dcdaec03740d25c))
