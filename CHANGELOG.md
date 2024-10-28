@@ -8,6 +8,8 @@
 
 ### Misc
 
+- update args ([1a06c72](https://github.com/CrystalNET-org/paperless-ftpd/commit/1a06c728e6a25e143f101a94b9699c422df96bf2))
+- update buildx ([ac60aba](https://github.com/CrystalNET-org/paperless-ftpd/commit/ac60abade4d60a09f76c6ce09b4166d0896d35bc))
 - move arg ([39ff3a6](https://github.com/CrystalNET-org/paperless-ftpd/commit/39ff3a6dea68b4e1754f8ed13e6ea6e318aabe53))
 - Update renovate/renovate Docker tag to v38 [[#13](https://github.com/CrystalNET-org/paperless-ftpd/pull/13)]
 - Update woodpeckerci/plugin-git Docker tag to v2.6.0 [[#12](https://github.com/CrystalNET-org/paperless-ftpd/pull/12)]
