@@ -38,6 +38,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositori
 
 COPY --from=builder /opt /opt
 COPY --from=builder /temp/out/paperless_auth /opt/pureftpd/sbin/
+RUN chmod a+x /opt/pureftpd/sbin/paperless_auth
 ADD rootfs /
 RUN ls /opt/pureftpd/sbin
 
