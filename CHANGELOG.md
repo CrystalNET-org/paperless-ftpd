@@ -4,10 +4,13 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Lukas Wingerberg, @Cronix, @psych0d0g
+@psych0d0g, @Cronix, @Lukas Wingerberg
 
 ### Misc
 
+- Update woodpeckerci/plugin-git Docker tag to v2.6.0 [[#12](https://github.com/CrystalNET-org/paperless-ftpd/pull/12)]
+- Update renovate/renovate Docker tag to v37.440.7 [[#11](https://github.com/CrystalNET-org/paperless-ftpd/pull/11)]
+- comment default ([5b2524c](https://github.com/CrystalNET-org/paperless-ftpd/commit/5b2524c2e4b96bd88c126478d3037e0553bcce0e))
 - update dependencies and fix paperless-auth release location ([c2ce914](https://github.com/CrystalNET-org/paperless-ftpd/commit/c2ce9146c01b9d468e34c03cdd2d346592456f2e))
 - update paperless-dbauth plugin to latest version ([a41b6b2](https://github.com/CrystalNET-org/paperless-ftpd/commit/a41b6b2569b91256430b15667946b476e2ba9532))
 - Update renovate/renovate Docker tag to v37.140.10 [[#8](https://github.com/CrystalNET-org/paperless-ftpd/pull/8)]
