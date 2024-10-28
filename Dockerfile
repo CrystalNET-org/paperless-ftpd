@@ -1,17 +1,16 @@
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
 # renovate: datasource=github-releases depName=CrystalNET-org/pure-ftpd-paperless-dbauth versioning=loose
 ARG PAPERLESS_AUTH_VERSION=0.0.8
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as builder
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
+ARG TARGETARCH
 
 LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
 LABEL github_url="https://github.com/CrystalNET-org/containers/tree/main/paperless-ftpd"
 
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+RUN echo "I am running on ${BUILDPLATFORM}, building for ${TARGETPLATFORM} wich is arch: ${TARGETARCH}"
 
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
