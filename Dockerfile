@@ -2,15 +2,14 @@
 ARG PAPERLESS_AUTH_VERSION=0.0.8
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as builder
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
 ARG TARGETARCH
+ARG PAPERLESS_AUTH_VERSION
 
 LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
 LABEL github_url="https://github.com/CrystalNET-org/containers/tree/main/paperless-ftpd"
 
-RUN echo "I am running on ${BUILDPLATFORM}, building for ${TARGETPLATFORM} wich is arch: ${TARGETARCH}"
+RUN echo "I am building for ${TARGETARCH} and with auth binary release: ${PAPERLESS_AUTH_VERSION}"
 
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
@@ -28,16 +27,7 @@ RUN mkdir -p /temp/build /temp/out && \
     ls /opt/pureftpd && \
     cd /temp/build
 
-RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
-        export ARCHITECTURE=amd64; \
-    elif [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
-        export ARCHITECTURE=arm; \
-    elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
-        export ARCHITECTURE=arm64; \
-    elif [ "$TARGETPLATFORM" = "linux/arm" ]; then \
-        export ARCHITECTURE=arm; \
-    else ARCHITECTURE=amd64; fi && \
-    curl -sS -L -o paperless_auth --output-dir /temp/out/ --create-dirs "https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/download/${PAPERLESS_AUTH_VERSION}/verify_pw_${ARCHITECTURE}"
+RUN curl -sS -L -o paperless_auth --output-dir /temp/out/ --create-dirs "https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/download/${PAPERLESS_AUTH_VERSION}/verify_pw_${TARGETARCH}"
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
