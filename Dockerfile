@@ -9,7 +9,7 @@ LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
 LABEL github_url="https://github.com/CrystalNET-org/containers/tree/main/paperless-ftpd"
 
-RUN echo "I am running on ${BUILDPLATFORM}, building for ${TARGETPLATFORM} wich is arch: ${TARGETARCH} and auth binary release: ${PAPERLESS_AUTH_VERSION}"
+RUN echo "I am building for ${TARGETARCH} and with auth binary release: ${PAPERLESS_AUTH_VERSION}"
 
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
