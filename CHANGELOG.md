@@ -1,13 +1,15 @@
 # Changelog
 
-## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-02-05
+## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-10-28
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@psych0d0g
+@Lukas Wingerberg, @Cronix, @psych0d0g
 
 ### Misc
 
+- update dependencies and fix paperless-auth release location ([c2ce914](https://github.com/CrystalNET-org/paperless-ftpd/commit/c2ce9146c01b9d468e34c03cdd2d346592456f2e))
+- update paperless-dbauth plugin to latest version ([a41b6b2](https://github.com/CrystalNET-org/paperless-ftpd/commit/a41b6b2569b91256430b15667946b476e2ba9532))
 - Update renovate/renovate Docker tag to v37.140.10 [[#8](https://github.com/CrystalNET-org/paperless-ftpd/pull/8)]
 - Update renovate/renovate Docker tag to v37.115.0 [[#7](https://github.com/CrystalNET-org/paperless-ftpd/pull/7)]
 
