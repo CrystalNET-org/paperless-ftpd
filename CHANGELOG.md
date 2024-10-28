@@ -8,6 +8,9 @@
 
 ### Misc
 
+- cleanup debug echo ([29fa75e](https://github.com/CrystalNET-org/paperless-ftpd/commit/29fa75e9d9bcc494d4a78932c6c673140976cd5d))
+- cleanup arch if block, dont build for i386 anymore ([2874602](https://github.com/CrystalNET-org/paperless-ftpd/commit/28746020f3f2b50a7d7f6df40609a2a6594e6b1d))
+- fix arguments supplied to the build stage ([880eb15](https://github.com/CrystalNET-org/paperless-ftpd/commit/880eb15d36912e4c36dbccf32dcdaec03740d25c))
 - update args ([1a06c72](https://github.com/CrystalNET-org/paperless-ftpd/commit/1a06c728e6a25e143f101a94b9699c422df96bf2))
 - update buildx ([ac60aba](https://github.com/CrystalNET-org/paperless-ftpd/commit/ac60abade4d60a09f76c6ce09b4166d0896d35bc))
 - move arg ([39ff3a6](https://github.com/CrystalNET-org/paperless-ftpd/commit/39ff3a6dea68b4e1754f8ed13e6ea6e318aabe53))
