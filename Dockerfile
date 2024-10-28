@@ -4,6 +4,8 @@ ARG BUILDPLATFORM
 ARG PAPERLESS_AUTH_VERSION=0.0.8
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as builder
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 LABEL author="Lukas Wingerberg"
 LABEL author_email="h@xx0r.eu"
