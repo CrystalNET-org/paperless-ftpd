@@ -1,5 +1,5 @@
 # renovate: datasource=github-releases depName=CrystalNET-org/pure-ftpd-paperless-dbauth versioning=loose
-ARG PAPERLESS_AUTH_VERSION=0.0.8
+ARG PAPERLESS_AUTH_VERSION=0.0.9
 
 FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 AS builder
 ARG TARGETARCH
