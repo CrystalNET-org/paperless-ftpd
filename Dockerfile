@@ -14,7 +14,7 @@ RUN echo "I am building for ${TARGETARCH} and with auth binary release: ${PAPERL
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
-    apk add --update-cache --no-cache curl openssl less bash tzdata git make g++ automake autoconf libsodium-dev musl-dev gcompat go && \
+    apk add --update-cache --no-cache curl openssl less bash tzdata git make g++ automake autoconf libsodium-dev musl-dev go && \
     rm -rf /var/cache/apk/*
 
 RUN mkdir -p /temp/build /temp/out && \
