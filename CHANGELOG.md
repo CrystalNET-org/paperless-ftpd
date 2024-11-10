@@ -8,6 +8,7 @@
 
 ### Misc
 
+- fix casing ([33cd5d6](https://github.com/CrystalNET-org/paperless-ftpd/commit/33cd5d60569704e702b4c142f6757b914c5c2dc1))
 - add gnu C compatibility layer ([83d2f94](https://github.com/CrystalNET-org/paperless-ftpd/commit/83d2f94e6ef9147d562fe5522f22bfe1559f66fd))
 
 ## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-10-28
