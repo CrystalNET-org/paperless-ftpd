@@ -10,7 +10,7 @@ steps:
     image: woodpeckerci/plugin-docker-buildx:5.0.0
     settings:
       debug: true
-      repo: harbor.crystalnet.org/library/paperless_ftpd
+      repo: harbor.crystalnet.org/library/paperless-ftpd
       logins:
       - registry: https://harbor.crystalnet.org/
         username: robot$library+woodpecker
