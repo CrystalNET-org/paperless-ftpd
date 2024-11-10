@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.5](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.5) - 2024-11-10
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Lukas Wingerberg
+
+### Misc
+
+- fix naming of dev builds to be the same as stable builds ([c9eca14](https://github.com/CrystalNET-org/paperless-ftpd/commit/c9eca145628cdbf80d5361d2c3832d86abad8a48))
+- update paperless auth release ([e962d22](https://github.com/CrystalNET-org/paperless-ftpd/commit/e962d22e525cb85d0bc2751cdda2b52ef2de42bf))
+- fix casing ([99cb725](https://github.com/CrystalNET-org/paperless-ftpd/commit/99cb7252b2c5b5f9c36f64dae77d9313764e8d47))
+- fix casing ([33cd5d6](https://github.com/CrystalNET-org/paperless-ftpd/commit/33cd5d60569704e702b4c142f6757b914c5c2dc1))
+- add gnu C compatibility layer ([83d2f94](https://github.com/CrystalNET-org/paperless-ftpd/commit/83d2f94e6ef9147d562fe5522f22bfe1559f66fd))
+
 ## [0.2.4](https://github.com/CrystalNET-org/paperless-ftpd/releases/tag/0.2.4) - 2024-10-28
 
 ### ❤️ Thanks to all contributors! ❤️
