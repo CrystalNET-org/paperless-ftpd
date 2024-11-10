@@ -1,7 +1,7 @@
 # renovate: datasource=github-releases depName=CrystalNET-org/pure-ftpd-paperless-dbauth versioning=loose
 ARG PAPERLESS_AUTH_VERSION=0.0.8
 
-FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as builder
+FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 AS builder
 ARG TARGETARCH
 ARG PAPERLESS_AUTH_VERSION
 
@@ -29,7 +29,7 @@ RUN mkdir -p /temp/build /temp/out && \
 
 RUN curl -sS -L -o paperless_auth --output-dir /temp/out/ --create-dirs "https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/download/${PAPERLESS_AUTH_VERSION}/verify_pw_${TARGETARCH}"
 
-FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 as image
+FROM harbor.crystalnet.org/dockerhub-proxy/alpine:3.20 AS image
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk --update-cache --no-cache upgrade && \
